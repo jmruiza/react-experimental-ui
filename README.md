@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React experimental UI
 
-## Available Scripts
+Experimental UI based in this [tableau UI](https://www.tableau.com/es-es/reports/data-trends) 
 
-In the project directory, you can run:
+## How to run
 
-### `yarn start`
+1. Install package dependencies
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+# Use one of this commands
+yarn install
+npm install
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2. Install package dependencies
 
-### `yarn test`
+```bash
+# Use one of this commands
+yarn start
+npm start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Data structure
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The root node is the report, each report contains n articles and each article has n sections.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```mermaid
+graph TD
+    r(report) --> a1(article 1)
+    r(report) --> a2(article 2)
+    r(report) --> an(article n)
+    
+    a1(article n) --> s11(Section 1)
+		a1(article n) --> s12(Section 2)
+    a1(article n) --> s13(Section 3)
+		
+		a2(article n) --> s21(Section 1)
+		a2(article n) --> s22(Section 2)
+    a2(article n) --> s23(Section 3)
+		
+		an(article n) --> sn1(Section 1)
+		an(article n) --> sn2(Section 2)
+    an(article n) --> sn3(Section 3)
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Report
 
-### `yarn eject`
+```json
+{
+  "id": "1",
+  "title": "Enim reprehenderit consequat Lorem culpa magna id voluptate magna voluptate fugiat cupidatat id aute et.",
+  "abstract": "Exercitation officia velit duis labore. Sunt nostrud voluptate non sint tempor ea officia ut. Do dolor dolor culpa do proident commodo tempor ullamco fugiat minim elit nisi id. Tempor eiusmod ipsum excepteur et Lorem."
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Article
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```json
+{
+  "id": "1",
+  "title": "In amet ex culpa incididunt ex aliqua."
+}
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Section
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```json
+{
+  "content": "Ut non consectetur exercitation est ullamco sunt pariatur duis consequat ipsum amet id. Commodo labore ea reprehenderit et sint. Ut reprehenderit minim irure id officia ut deserunt qui. Ut eiusmod in aliquip cupidatat amet consequat duis qui eiusmod mollit nulla labore esse non. Aliqua proident sint voluptate sunt exercitation fugiat mollit aliqua nisi occaecat id consectetur quis."
+}
+```
