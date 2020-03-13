@@ -3,7 +3,7 @@
 import React from 'react';
 import {Layout} from 'antd';
 import Header from './components/header';
-import Breadcrumb from './components/breadcrumb';
+// import Breadcrumb from './components/breadcrumb';
 import Container from './components/container';
 import Footer from './components/footer';
 import './App.css';
@@ -15,8 +15,8 @@ function App() {
   return (
     <Layout className="layout">
       <Header/>
-      <Content style={{ padding: '0 50px' }}>
-        <Breadcrumb />
+      <Content style={{ width: '85%', margin: '0px auto'}}>
+        {/* <Breadcrumb /> */}
         <Container/>
       </Content>
       <Footer 

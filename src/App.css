@@ -40,6 +40,25 @@
   }
 }
 
+.layout {
+  background-color: #0c1a31 !important;
+}
+
+/*
+.logo {
+  height: 29px;
+  background-image: url('/static/media/logo.png');
+  background-color: white;
+  background-repeat: no-repeat;
+}
+*/
+
+.navigation {
+  background-color: white;
+  width: 100% !important;
+  height: 101px;
+}
+
 .footer-menu, .footer-global {
   list-style-type: none;
   margin: 0;
@@ -61,4 +80,17 @@
 .footer-global {
   color:#787878;
   margin: 20px auto;
+}
+
+
+
+
+.scrollable-container {
+  height: 100px;
+  overflow-y: scroll;
+}
+.background {
+  padding-top: 60px;
+  height: 300px;
+  background-image: url('https://zos.alipayobjects.com/rmsportal/RmjwQiJorKyobvI.jpg');
 }

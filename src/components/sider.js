@@ -1,22 +1,36 @@
-import React, { useState } from 'react';
-import { Affix, Anchor } from 'antd';
-const { Link } = Anchor;
+import React from "react";
+import { Affix, Button } from "antd";
 
-export default () => {
-  const [top] = useState(10);
-    return (      
-        <Affix offsetTop={top}>
-          <div type="primary">
-            <Anchor>
-                <Link href="#components-anchor-demo-basic" title="Basic demo" />
-                <Link href="#components-anchor-demo-static" title="Static demo" />
-                <Link href="#components-anchor-demo-basic" title="Basic demo with Target" target="_blank" />
-                <Link href="#API" title="API">
-                <Link href="#Anchor-Props" title="Anchor Props" />
-                <Link href="#Link-Props" title="Link Props" />
-                </Link>
-            </Anchor>
+export default class extends React.Component {
+  constructor(props) {
+    super(props);
+    this.affixRef = this.props.AffixRef;
+  }
+
+  componentDidMount() {
+    window.addEventListener(
+      "scroll",
+      () => {
+        this.affixRef.current.updatePosition();
+      },
+      true
+    );
+  }
+
+  render() {
+    return (
+        <div
+          className="scrollable-container"
+          ref={node => {
+            this.container = node;
+          }}
+        >
+          <div className="background">
+            <Affix ref={this.affixRef} target={() => this.container}>
+              <Button type="primary">Fixed at the top of container</Button>
+            </Affix>
           </div>
-        </Affix>
-        );
-    };
+        </div>      
+    );
+  }
+}
