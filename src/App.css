@@ -1,5 +1,8 @@
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
+  /*font-family: Merriweather, serif*/
 }
 
 .App-logo {
@@ -14,8 +17,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #0c1a31;
+  min-height: 678;
   display: flex;
   flex-direction: column;
   align-items: center;
