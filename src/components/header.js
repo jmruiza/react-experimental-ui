@@ -1,21 +1,23 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import {Layout, Menu} from 'antd';
 
-const style = {
-    backgroundColor: '#FFFFFF0A',
-    border: '1px dashed white',
-};
+const {Item} = Menu;
+const {Header} = Layout;
 
 export default () => {
-    return <Row
-        style={{            
-            width: '85%',
-            minHeight: 678
-        }}
-        > 
-        {/* TODO: Work in design with content */}
-        <Col xs={24} md={15} style={style}>.col</Col>
-        <Col xs={24} md={9} style={style}>.col</Col>
-    </Row>
-}
-
+  return (
+    <Header>
+    <div className="logo" />
+    <Menu
+      theme="dark"
+      mode="horizontal"
+      defaultSelectedKeys={['2']}
+      style={{ lineHeight: '64px' }}
+    >
+      <Item key="1">nav 1</Item>
+      <Item key="2">nav 2</Item>
+      <Item key="3">nav 3</Item>
+    </Menu>
+  </Header>
+  );
+};

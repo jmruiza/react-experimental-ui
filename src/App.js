@@ -1,34 +1,32 @@
+// TODO: Use Redux
+
 import React from 'react';
-import logo from './logo.svg';
+import {Layout} from 'antd';
+import Header from './components/header';
+import Breadcrumb from './components/breadcrumb';
+import Sider from './components/sider';
+import Container from './components/container';
+import Footer from './components/footer';
 import './App.css';
 
-import Header from './components/header';
+const {Content} = Layout;
+const languajes = ["Español", "English"];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header/>
-      </header>
-      <nav className="App-navigation">
-        navigation
-      </nav>
-      <aside className="App-sidebar">
-        aside
-      </aside>    
-      <section className="App-section">
-        section
-        <article className="App-article">
-          article
-        </article>
-        <article className="App-article">
-          article
-        </article>
-      </section>
-      <footer className="App-footer">
-        footer
-      </footer>
-    </div>
+    <Layout className="layout">
+      <Header/>
+      <Content style={{ padding: '0 50px' }}>
+        <Breadcrumb />
+        <Sider/>
+        <Container/>
+      </Content>
+      <Footer 
+        style={{backgroundColor: "#1b1b1b", height: 98, padding: 32, color: '#bbb'}}
+        languajes={languajes}
+        currentLanguaje="Español"
+      />
+  </Layout>
   );
 }
 
