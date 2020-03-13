@@ -3,8 +3,7 @@ import { Affix, Anchor } from 'antd';
 const { Link } = Anchor;
 
 export default () => {
-    const [top, setTop] = useState(10);
-    
+  const [top] = useState(10);
     return (      
         <Affix offsetTop={top}>
           <div type="primary">

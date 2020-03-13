@@ -40,10 +40,11 @@
   }
 }
 
-.footer-menu {
+.footer-menu, .footer-global {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  text-decoration: none;
 }
 
 .footer-menu>li {
@@ -55,4 +56,9 @@
 .footer-media-buttons {
   margin: 0px auto 0px 0px;
   font-size: 25px;
+}
+
+.footer-global {
+  color:#787878;
+  margin: 20px auto;
 }

@@ -3,7 +3,12 @@ import {Row, Col, Layout, Menu, Dropdown, Button} from 'antd';
 import { LinkedinOutlined, FacebookOutlined, TwitterOutlined } from '@ant-design/icons';
 
 const {Footer} = Layout;
-const style = { textAlign: 'center' };
+const style = { 
+    backgroundColor: "#1b1b1b", 
+    minHeight: 200, 
+    padding: 32, 
+    color: '#bbb'
+};
 const styleMenu = { width: 100, backgroundColor: '#333', color: '#bbb' };
 const menu = (
     <Menu style={{...styleMenu}}>
@@ -19,15 +24,16 @@ const menu = (
 export default (props) => {
   return (
         <Footer 
-            style={{...style, ...props.style}}
-        >
+            style={style}
+            >
+            {/* TODO: Make it responsive */}
             <Row className='footer-main' justify="start">
-                <Col xs={24} md={1}>
+                <Col xs={24} md={2} style={{textAlign: 'left', marginTop: 3}}>
                     <Dropdown overlay={menu} placement="topCenter">
                         <Button style={{...styleMenu, border: 'none'}}>{props.currentLanguaje}</Button>
                     </Dropdown>
                 </Col>
-                <Col xs={24} md={16}>
+                <Col xs={24} md={15} style={{textAlign: 'left', marginTop: 8}}>
                     <ul className='footer-menu'>                
                         <li>
                             Estado del Sistema
@@ -50,7 +56,7 @@ export default (props) => {
                     </ul>
                 </Col>
                 {/* TODO: Fix to float right */}
-                <Col xs={24} md={4}>
+                <Col xs={24} md={4} style={{textAlign: 'right'}}>
                     <ul className='footer-menu footer-media-buttons'>                
                         <li>
                             <LinkedinOutlined />
@@ -66,8 +72,23 @@ export default (props) => {
 
             </Row>
             <Row className='footer-global'>
-                <Col>LEGAL</Col>
-                <Col>Rights</Col>
+                <Col xs={24} md={12} style={{textAlign: 'left'}}>
+                    <ul className='footer-menu'>                
+                        <li>
+                            LEGAL
+                        </li>
+                        <li>
+                            PRIVACIDAD
+                        </li>
+                        <li>
+                            DESINSTALAR
+                        </li>
+                    </ul>
+                </Col>
+                <Col xs={24} md={12} style={{textAlign: 'right'}}>
+                    © 2003-2020 EMERAL DIGITAL S.C. SOFTWARE<br/>
+                    TODOS LOS DERECHOS RESERVADOS
+                </Col>
             </Row>
         </Footer>
   );

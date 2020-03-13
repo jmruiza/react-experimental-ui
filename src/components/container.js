@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
+import Sider from './sider';
+
 const style = {
     backgroundColor: '#FFFFFF0A',
     border: '1px dashed white',
@@ -14,8 +16,14 @@ export default () => {
         }}
         > 
         {/* TODO: Work in design with content */}
-        <Col xs={24} md={15} style={style}>.col</Col>
-        <Col xs={24} md={9} style={style}>.col</Col>
+            <Row>
+                <Col xs={24} md={15} style={style}>.col</Col>
+                <Col xs={24} md={9} style={style}>.col</Col>
+            </Row>
+            <Row> 
+                <Col xs={24} md={8} style={style}><Sider/></Col>
+                <Col xs={24} md={16} style={style}>HOLA</Col>            
+            </Row>
     </Row>
 }
 
