@@ -20,7 +20,6 @@ yarn start
 npm start
 ```
 
-
 ## Data structure
 
 The root node is the report, each report contains n articles and each article has n sections.
@@ -70,3 +69,8 @@ graph TD
   "content": "Ut non consectetur exercitation est ullamco sunt pariatur duis consequat ipsum amet id. Commodo labore ea reprehenderit et sint. Ut reprehenderit minim irure id officia ut deserunt qui. Ut eiusmod in aliquip cupidatat amet consequat duis qui eiusmod mollit nulla labore esse non. Aliqua proident sint voluptate sunt exercitation fugiat mollit aliqua nisi occaecat id consectetur quis."
 }
 ```
+
+## Resources and realted links
+* [INFORME SOBRE TENDENCIAS DE DATOS (TLABEAU)](https://www.tableau.com/es-es/reports/data-trends#trend6)
+* [Affix](https://ant.design/components/affix/#header)
+* [Affix (DEMO)](https://codesandbox.io/s/2xyj5zr85p)
