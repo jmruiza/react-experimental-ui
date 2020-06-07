@@ -33,11 +33,11 @@ const reducer = (state, action) => {
         subscribed: false
       };
     case 'loginUser':
-    return {
-      ...state,
-      isAuthenticated: action.payload.authenticated,
-      name: action.payload.user.name,
-    };
+      return {
+        ...state,
+        isAuthenticated: action.payload.authenticated,
+        name: action.payload.user.name,
+      };
     default:
       return state;
   }
